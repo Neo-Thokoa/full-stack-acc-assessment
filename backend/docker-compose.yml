@@ -1,0 +1,32 @@
+version: "3.7"
+services:
+  mongo:
+    container_name: mongo
+    image: mongo:latest
+    restart: always
+    network_mode: bridge
+    command: mongod --quiet --logpath /dev/null
+    ports:
+      - 27017:27017
+    expose:
+      - 27017
+  server:
+    build:
+      context: .
+      args:
+        NODE_ENV: development
+    volumes:
+      - ./:/app:ro
+      - /app/node_modules
+    env_file:
+      - .env
+    container_name: server
+    restart: unless-stopped
+    network_mode: bridge
+    command: yarn dev
+    ports:
+      - 4000:4000
+    expose:
+      - 4000
+    links:
+      - mongo  
