@@ -4,6 +4,7 @@ import syncBrands  from './controllers/trusted-brands.controller'; // Import the
 const PORT = process.env.PORT || 4000;
 
 const mongodburi = process.env.MONGODB_URI || "";
+console.log("MongoURI->", mongodburi);
 /* Connecting to the database and then starting the server. */
 mongoose
   .connect(mongodburi)

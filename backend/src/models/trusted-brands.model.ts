@@ -3,16 +3,19 @@ import mongoose from 'mongoose';
 const Schema = mongoose.Schema;
 
 const trustedBrandsSchema = new Schema({
-  name: {
+  id: {
     type: String,
     required: true,
   },
-  logo: {
+  src: {
     type: String,
     required: true,
   },
   publishedDate: {
-    type: Date,
+    type: Date
+  },
+  title: {
+    type: String,
     required: true,
   },
 });

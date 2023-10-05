@@ -1,4 +1,4 @@
-version: "3.7"
+version: "3.9"
 services:
   mongo:
     container_name: mongo
@@ -21,6 +21,9 @@ services:
     env_file:
       - .env
     container_name: server
+    environment:
+      MONGODB_URI: mongodb://mongo:27017
+      DB_NAME: brands
     restart: unless-stopped
     network_mode: bridge
     command: yarn dev
