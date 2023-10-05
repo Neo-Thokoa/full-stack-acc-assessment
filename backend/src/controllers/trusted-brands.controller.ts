@@ -2,6 +2,7 @@ import trustedBrands from "../models/trusted-brands.model";
 
 const getTrustedBrands = async (req: any, res: any) => {
   try {
+    res.set('Access-Control-Allow-Origin', 'http://localhost:3000');
     const { publishedDate } = req.query;
 
     const filter = publishedDate
@@ -19,7 +20,7 @@ const getTrustedBrands = async (req: any, res: any) => {
 
     const trustedBrandsList = await trustedBrands
       .find(filter)
-      .sort({ name: 1 });
+      .sort({ title: 1 });
     if (trustedBrandsList.length === 0) {
       res.status(404).json({ message: "No trusted brands found." });
     } else {

@@ -1,21 +1,7 @@
 import data from "../../data/index.json";
 import React, { useEffect, useState } from "react";
 export default function Services() {
-  console.log(data.services);
-  const [servicesData, setServicesData] = useState([]);
 
-  useEffect(() => {
-    // Replace 'your-api-endpoint' with the actual URL of your backend API
-    fetch("http://localhost:4000/api/services")
-      .then((response) => response.json())
-      .then((data) => {
-        // Assuming your API returns an array of services data
-        setServicesData(data);
-      })
-      .catch((error) => {
-        console.error("Error fetching data:", error);
-      });
-  }, []);
 
   return (
     <section className="services--section" id="Services">
