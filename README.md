@@ -42,3 +42,7 @@ Optionally, you can filter brands by publishedDate by including the publishedDat
 *MongoDB
 *React.js
 *CSS
+
+## IMPORTANT
+
+Find more documentation and insight on <https://neo-thokoa.github.io/full-stack-acc-assessment/>
