@@ -62,4 +62,23 @@ Inputs:
 Outputs:
 - The 'routes' array, which contains the routes defined in the 'global' and 'trusted-brands.route' files.
 
+### app.ts
 
+Creates and configures an Express app with CORS middleware and routing.
+
+Example Usage:
+```typescript
+import express from "express";
+import cors from "cors";
+import routes from "./routes";
+
+const app = createApp();
+```
+
+Inputs:
+- `express`: The Express module imported from the "express" package.
+- `cors`: The CORS module imported from the "cors" package.
+- `routes`: The routes module imported from the "./routes" file.
+
+Outputs:
+- An instance of the Express app with CORS middleware and routing configured.
