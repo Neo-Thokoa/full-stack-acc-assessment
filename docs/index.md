@@ -4,47 +4,62 @@
 
 This project is a full-stack web application with a Node.js backend written in TypeScript using Express.js as an API server, Docker for containerization, and MongoDB as the database. The frontend is developed using React.js and CSS. 
 
-## Getting Started
+## Backend Details
 
-To run the project locally, follow the instructions below:
+Details of files used
 
-### Backend
+### Server.ts
 
-1. Make sure you have Docker and Docker Compose installed on your system.
-2. Clone this repository.
-3. Open a terminal and navigate to the project's root directory.
-4. Run the following command to start the Docker environment:
-```bash
-   docker-compose up -d
+Connects to a MongoDB database using Mongoose and starts a server using Express.
+
+Example Usage:
+```typescript
+import mongoose from "mongoose";
+import app from './app'
+import syncBrands  from './controllers/trusted-brands.controller'; // Import the syncBrands function
+const PORT = process.env.PORT || 4000;
+
+const mongodburi = process.env.MONGODB_URI || "";
+console.log("MongoURI->", mongodburi);
+
+mongoose
+  .connect(mongodburi)
+  .then(() => {
+    app.listen(PORT);
+    console.log(`Server is running at PORT ${PORT} 🚀`)
+  })
+  .catch((err) => {
+    console.log(err);
+  });
 ```
-This will launch the backend and MongoDB containers.
-5. The backend API will be exposed at http://localhost:4000.
 
-### Frontend
+Inputs:
+- `mongoose`: The Mongoose library for MongoDB.
+- `app`: The Express application.
+- `syncBrands`: The function imported from the `trusted-brands.controller` file.
+- `PORT`: The port number for the server.
+- `mongodburi`: The MongoDB connection URI.
 
-1. Navigate to the frontend directory in your terminal.
-2. Run the following command to install the frontend dependencies:
-```bash
-yarn install
+Outputs:
+- The server starts running at the specified `PORT`.
+- A success message is logged to the console.
+"""
+
+### routes.ts
+
+Imports the 'globalRoute' and 'trustedBrand' modules from their respective files and exports an array of routes.
+
+Example Usage:
+```typescript
+
+// Use the routes array
+app.use(routes)
 ```
-3. Start the frontend development server with:
 
-```bash
-yarn start
-```
-4. The frontend will be available at http://localhost:3000 by default.
+Inputs:
+- None
 
-### API Endpoint
+Outputs:
+- The 'routes' array, which contains the routes defined in the 'global' and 'trusted-brands.route' files.
 
-To get brands, you can make a GET request to the following endpoint:
-<http://localhost:4000/api/getbrands>
-Optionally, you can filter brands by publishedDate by including the publishedDate parameter in your request.
 
-## Technologies Used
-
-*Node.js (TypeScript)
-*Express.js
-*Docker
-*MongoDB
-*React.js
-*CSS
