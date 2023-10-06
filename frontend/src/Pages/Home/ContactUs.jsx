@@ -1,3 +1,8 @@
+/**
+ * Renders a footer section with contact information and social media links.
+ *
+ * @returns {JSX.Element} The rendered footer section.
+ */
 import React from "react";
 import { Link } from "react-scroll";
 
@@ -63,9 +68,8 @@ function ContactUs() {
                 Imperressum
               </Link>
             </li>
-            
           </ul>
-          <ul  className="footer-grid-terms-socials">
+          <ul className="footer-grid-terms-socials">
             <li>
               <Link
                 activeClass="navbar--active-content"
@@ -186,7 +190,7 @@ function ContactUs() {
               >
                 Dribble
               </Link>
-            </li>   
+            </li>
           </ul>
           <ul className="footer-grid-terms-jobs">
             <li>
@@ -202,7 +206,7 @@ function ContactUs() {
                 Explore open jobs
               </Link>
             </li>
-               
+
             <li>
               <Link
                 activeClass="navbar--active-content"

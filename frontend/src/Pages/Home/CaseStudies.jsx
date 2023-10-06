@@ -1,3 +1,10 @@
+/**
+ * Functional component that displays a carousel of case studies.
+ * Uses the useState and useEffect hooks to manage the current index of the carousel and automatically update it every few seconds.
+ * Receives the case study data from an external JSON file and maps over it to render each case study card.
+ *
+ * @returns {JSX.Element} The rendered component.
+ */
 import React, { useEffect, useState } from 'react';
 import data from "../../data/index.json";
 
@@ -5,7 +12,9 @@ export default function CaseStudies() {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
-    // Function to update the current index for the carousel
+    /**
+     * Function to update the current index for the carousel
+     */
     const updateIndex = () => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % data.portfolio.length);
     };
@@ -17,12 +26,13 @@ export default function CaseStudies() {
       clearInterval(intervalId); // Clear the interval when the component unmounts
     };
   }, []);
+
   return (
     <section className="portfolio--section" id="CaseStudies">
       <div className="portfolio--container-box">
         <div className="portfolio--container">
-            <div className="section-bullet"></div>
-            <h2 className="section--heading">Case studies</h2>
+          <div className="section-bullet"></div>
+          <h2 className="section--heading">Case studies</h2>
         </div>
       </div>
       <div className="portfolio--section--container">
@@ -42,5 +52,5 @@ export default function CaseStudies() {
         ))}
       </div>
     </section>
-  )
+  );
 }

@@ -1,3 +1,8 @@
+/**
+ * Renders a hero section on a webpage.
+ *
+ * @returns {JSX.Element} The hero section component.
+ */
 export default function HeroSection() {
     return (
       <section id="heroSection" className="hero--section">
@@ -18,4 +23,3 @@ export default function HeroSection() {
       </section>
     );
   }
-  

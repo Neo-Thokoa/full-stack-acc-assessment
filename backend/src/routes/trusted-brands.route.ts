@@ -1,4 +1,4 @@
-import request from "request";
+
 import express from "express";
 
 import trustedBrandsControllers from "../controllers/trusted-brands.controller";

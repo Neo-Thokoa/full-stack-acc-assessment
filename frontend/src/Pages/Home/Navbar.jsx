@@ -1,3 +1,14 @@
+/**
+ * This code snippet is a functional component in React that represents a navbar.
+ * It uses the useState and useEffect hooks from the React library to manage the state of the navbar and handle events.
+ * The navbar can be toggled open and closed by clicking on a hamburger icon.
+ * It also includes links to different sections of the webpage that scroll smoothly to the target section when clicked.
+ *
+ * @example
+ * <Navbar />
+ *
+ * @returns {JSX.Element} The JSX code representing the navbar component.
+ */
 import { useState, useEffect } from "react";
 import { Link } from "react-scroll";
 

@@ -1,12 +1,17 @@
+/**
+ * Renders a section containing a list of services based on the data imported from a JSON file.
+ *
+ * @returns {JSX.Element} The rendered section with service cards.
+ */
 import data from "../../data/index.json";
 export default function Services() {
   return (
     <section className="services--section" id="Services">
       <div className="services--container">
-      <div className="portfolio--container flex-item">
-        <div className="section-bullet"></div>
-        <h2 className="section--heading">What we do</h2>
-      </div>
+        <div className="portfolio--container flex-item">
+          <div className="section-bullet"></div>
+          <h2 className="section--heading">What we do</h2>
+        </div>
         <p className="services--section--overall-description">
           We offer a complete range of bespoke design and development services
           to help you turn your ideas into digital masterpieces

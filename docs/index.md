@@ -82,3 +82,93 @@ Inputs:
 
 Outputs:
 - An instance of the Express app with CORS middleware and routing configured.
+
+### trusted-brands.route.ts
+
+
+Imports the necessary modules and defines the routes for two API endpoints in an Express.js application.
+
+Example Usage:
+```typescript
+import express from "express";
+import trustedBrandsControllers from "../controllers/trusted-brands.controller";
+
+const router = express.Router();
+
+router.get("/api/getbrands", trustedBrandsControllers.getTrustedBrands);
+router.get("/api/syncbrands", trustedBrandsControllers.syncBrands);
+
+export default router;
+```
+
+Inputs:
+- express: The Express.js framework module.
+- trustedBrandsControllers: An object containing the controller methods for handling the "/api/getbrands" and "/api/syncbrands" routes.
+
+Outputs:
+- router: The Express.js router instance that contains the defined routes for the "/api/getbrands" and "/api/syncbrands" endpoints.
+
+### trusted-brands.model.ts
+
+Defines a Mongoose schema for a collection called "TrustedBrands".
+
+Example Usage:
+```typescript
+import mongoose from 'mongoose';
+
+const Schema = mongoose.Schema;
+
+const trustedBrandsSchema = new Schema({
+  id: {
+    type: String,
+    required: true,
+  },
+  src: {
+    type: String,
+    required: true,
+  },
+  publishedDate: {
+    type: Date
+  },
+  title: {
+    type: String,
+    required: true,
+  },
+});
+
+export default mongoose.model('TrustedBrands', trustedBrandsSchema);
+```
+
+Inputs:
+- `mongoose`: The Mongoose library for MongoDB.
+- `Schema`: The schema class provided by Mongoose.
+
+Outputs:
+- A Mongoose schema object that defines the structure of the "TrustedBrands" collection in MongoDB.
+
+### trusted-brands.controller.ts
+
+This module exports two functions: `getTrustedBrands` and `syncBrands`. The `getTrustedBrands` function retrieves a list of trusted brands from a MongoDB database based on a filter, while the `syncBrands` function inserts default brand data into the MongoDB database.
+
+Example Usage:
+```typescript
+// Retrieve trusted brands with a specific published date
+getTrustedBrands({ query: { publishedDate: '2022-01-01' } }, response);
+
+// Insert default brand data into the database
+syncBrands(request, response);
+```
+
+Inputs:
+- `req: any` - The request object containing the query parameters.
+- `res: any` - The response object used to send the HTTP response.
+
+Outputs:
+- If the 'publishedDate' is invalid, a 400 response with an error message is returned.
+- If no trusted brands are found, a 404 response with an error message is returned.
+- If the trusted brands are successfully retrieved, a 200 response with the list of trusted brands is returned.
+- If an error occurs, a 500 response with an error message is returned.
+
+"""
+
+## Front-End
