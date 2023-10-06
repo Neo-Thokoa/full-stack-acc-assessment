@@ -4,22 +4,26 @@ import { Link } from "react-scroll";
 function ContactUs() {
   return (
     <footer className="footer--container" id="Contact">
-      <div className="footer--header">
+      <div className="footer--header flex-item">
         <div className="section-bullet"></div>
         <h2 className="section--heading">Contact us</h2>
       </div>
-      <div className="footer--headline">
+      <div className="footer--headline footer-slogan-address">
         <p>Have a project in mind? Let's make it happen</p>
       </div>
-      <div className="footer--address">
+      <div className="footer--address footer-slogan-address">
         <p>
-          22 Street Name, Suburb, 8000, Cape Town, South Africa +27 21 431 0001
+          22 Street Name, Suburb, 8000, <br />
+          Cape Town, <br />
+          South Africa <br />
+          +27 21 431 0001
+          <br />
           enquirie@website.co.za
         </p>
       </div>
-      <div className="footer--content--container">
+      <div className="footer--content--container flex-item">
         <div className="footer--social--icon">
-          <ul>
+          <ul className="footer-grid-terms-socials">
             <li>
               <Link
                 activeClass="navbar--active-content"
@@ -40,53 +44,12 @@ function ContactUs() {
                 smooth={true}
                 offset={-70}
                 duration={500}
-                to="Privacy_Policy"
+                to="Terms_of_Service"
                 className="text-sm"
               >
-                Facebook
+                Privacy Policy
               </Link>
             </li>
-            <li>
-              <Link
-                activeClass="navbar--active-content"
-                spy={true}
-                smooth={true}
-                offset={-70}
-                duration={500}
-                to="Cookies_Settings"
-                className="text-sm"
-              >
-                Github
-              </Link>
-            </li>
-            <li>
-              <Link
-                activeClass="navbar--active-content"
-                spy={true}
-                smooth={true}
-                offset={-70}
-                duration={500}
-                to="Cookies_Settings"
-                className="text-sm"
-              >
-                Youtube
-              </Link>
-            </li>
-            <li>
-              <Link
-                activeClass="navbar--active-content"
-                spy={true}
-                smooth={true}
-                offset={-70}
-                duration={500}
-                to="Cookies_Settings"
-                className="text-sm"
-              >
-                Explore open jobs
-              </Link>
-            </li>
-          </ul>
-          <ul>
             <li>
               <Link
                 activeClass="navbar--active-content"
@@ -97,7 +60,23 @@ function ContactUs() {
                 to="Terms_of_Service"
                 className="text-sm"
               >
-                Privacy Policy
+                Imperressum
+              </Link>
+            </li>
+            
+          </ul>
+          <ul  className="footer-grid-terms-socials">
+            <li>
+              <Link
+                activeClass="navbar--active-content"
+                spy={true}
+                smooth={true}
+                offset={-70}
+                duration={500}
+                to="Privacy_Policy"
+                className="text-sm"
+              >
+                Facebook
               </Link>
             </li>
             <li>
@@ -126,6 +105,8 @@ function ContactUs() {
                 Linkedin
               </Link>
             </li>
+          </ul>
+          <ul className="footer-grid-terms-socials">
             <li>
               <Link
                 activeClass="navbar--active-content"
@@ -136,22 +117,7 @@ function ContactUs() {
                 to="Cookies_Settings"
                 className="text-sm"
               >
-                Behance
-              </Link>
-            </li>
-          </ul>
-          <ul>
-            <li>
-              <Link
-                activeClass="navbar--active-content"
-                spy={true}
-                smooth={true}
-                offset={-70}
-                duration={500}
-                to="Terms_of_Service"
-                className="text-sm"
-              >
-              Imperressum
+                Github
               </Link>
             </li>
             <li>
@@ -180,6 +146,8 @@ function ContactUs() {
                 Teams
               </Link>
             </li>
+          </ul>
+          <ul className="footer-grid-terms-socials">
             <li>
               <Link
                 activeClass="navbar--active-content"
@@ -190,7 +158,20 @@ function ContactUs() {
                 to="Cookies_Settings"
                 className="text-sm"
               >
-                Dribble
+                Youtube
+              </Link>
+            </li>
+            <li>
+              <Link
+                activeClass="navbar--active-content"
+                spy={true}
+                smooth={true}
+                offset={-70}
+                duration={500}
+                to="Privacy_Policy"
+                className="text-sm"
+              >
+                Behance
               </Link>
             </li>
             <li>
@@ -203,7 +184,36 @@ function ContactUs() {
                 to="Cookies_Settings"
                 className="text-sm"
               >
-              ©2000—2023 Company Name
+                Dribble
+              </Link>
+            </li>   
+          </ul>
+          <ul className="footer-grid-terms-jobs">
+            <li>
+              <Link
+                activeClass="navbar--active-content"
+                spy={true}
+                smooth={true}
+                offset={-70}
+                duration={500}
+                to="Cookies_Settings"
+                className="text-sm"
+              >
+                Explore open jobs
+              </Link>
+            </li>
+               
+            <li>
+              <Link
+                activeClass="navbar--active-content"
+                spy={true}
+                smooth={true}
+                offset={-70}
+                duration={500}
+                to="Cookies_Settings"
+                className="text-sm"
+              >
+                ©2000—2023 Company Name
               </Link>
             </li>
           </ul>

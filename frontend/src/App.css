@@ -531,11 +531,25 @@ input[type="checkbox"] {
 .footer--container {
   display: flex;
   padding: 106.667px 85.333px;
-  flex-direction: column;
+  flex-direction: row;
   align-items: flex-start;
+  flex-wrap: wrap;
   background: var(--primary-dark, #430964);
   align-items: center;
   align-self: stretch;
+}
+
+.flex-item {
+  flex-basis: 100%; /* Force items to start a new row regardless of available space */
+}
+
+.footer-slogan-address{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 15%;
+  flex: 1 0 0;
+  width: 100%;
 }
 .footer--link--container {
   display: flex;
@@ -555,7 +569,7 @@ input[type="checkbox"] {
 }
 .footer--social--icon {
   display: flex;
-  flex-wrap: wrap; /* Allow items to wrap to the next line */
+  
   gap: 16px; /* Adjust the gap between columns */
 }
 
@@ -578,6 +592,14 @@ input[type="checkbox"] {
   line-height: 150%; /* 30px */
 }
 
+.footer-grid-terms-socials{
+  flex-basis: 23%;
+}
+
+.footer-grid-terms-jobs{
+  flex-basis: 15%;
+}
+
 
 .divider {
   margin: 106px 0 42.67px;
@@ -588,7 +610,6 @@ input[type="checkbox"] {
 .footer--content--container {
   display: flex;
   justify-content: space-between;
-  align-items: center;
   align-self: stretch;
 }
 .footer--content {
