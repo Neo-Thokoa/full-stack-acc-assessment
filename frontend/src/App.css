@@ -342,6 +342,15 @@ h2 {
 
 /* Grid for Brands */
 /* CSS for the Brands section */
+.brand-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* flex-direction: column;
+  gap: 32px;
+  padding: 133.3px 85.3px;
+  background: var(--bg-shade); */
+}
 .brand-grid {
   display: grid;
   grid-template-columns: repeat(5, 1fr); /* 5 columns */
@@ -396,8 +405,9 @@ h2 {
 }
 .portfolio--container {
   display: flex;
-  flex-direction: row;
-  align-items: flex-start;
+  align-items: center; /* Vertically center the content */
+  display: flex;
+  flex-direction: row;;
   gap: 21.3px;
 }
 .portfolio--section--container {

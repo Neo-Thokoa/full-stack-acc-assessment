@@ -10,7 +10,6 @@ export default function Brands() {
       .then((data) => {
         // Assuming your API returns an array of services data
         setBrandsData(data);
-        console.log("data->", data);
       })
       .catch((error) => {
         console.error("Error fetching data:", error);
@@ -19,7 +18,7 @@ export default function Brands() {
   return (
     <section className="portfolio--section" id="Brands">
       <div className="portfolio--container-box">
-        <div className="portfolio--container">
+        <div className="portfolio--container flex-item">
           <div className="section-bullet"></div>
           <h2 className="section--heading">You will be in good company</h2>
         </div>
@@ -30,13 +29,16 @@ export default function Brands() {
           </p>
       </div>
       {/* Grid for brand images */}
-      <div className="brand-grid">
-        {BrandsData?.map((image, index) => (
-          <div key={index} className="brand-item">
-            <img src={image.src} alt={`Brand ${index + 1}`} />
-          </div>
-        ))}
+      <div className="brands-container">
+        <div className="brand-grid">
+          {BrandsData?.map((image, index) => (
+            <div key={index} className="brand-item">
+              <img src={image.src} alt={`Brand ${index + 1}`} />
+            </div>
+          ))}
+        </div>
       </div>
+      
     </section>
   );
 }
