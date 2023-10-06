@@ -23,12 +23,12 @@ export default function Brands() {
           <div className="section-bullet"></div>
           <h2 className="section--heading">You will be in good company</h2>
         </div>
-        <p className="services--section--overall-description">
-          We offer a complete range of bespoke design and development services
-          to help you turn your ideas into digital masterpieces
-        </p>
       </div>
-
+      <div className="brands-slogan">
+        <p className="services--section--overall-description">
+            Trusted by leading brands
+          </p>
+      </div>
       {/* Grid for brand images */}
       <div className="brand-grid">
         {BrandsData?.map((image, index) => (

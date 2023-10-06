@@ -7,7 +7,7 @@ export default function Homescreen() {
     return(
         <>
             <HeroSection />
-            <Services />
+             <Services />
             <CaseStudies />
             <Brands />
             <ContactUs />
