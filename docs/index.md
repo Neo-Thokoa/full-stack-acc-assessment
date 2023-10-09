@@ -172,3 +172,31 @@ Outputs:
 """
 
 ## Front-End
+- Notes found on comments in frontend folder
+
+## Development Process
+
+I approached this assessment using the SOLID Principle approach whereby the SOLID principles were applied during the development of a RESTful MVC API backend that connects to a MongoDB instance and the React Frontend Application.
+
+### SOLID Principles Overview
+
+SOLID is an acronym that represents five principles of object-oriented programming and design. These principles aim to create maintainable, scalable, and well-structured software. Here's how each SOLID principle was applied in this project:
+
+1. #### Single Responsibility Principle (SRP)
+* **Description**: Each module or class should have a single reason to change.
+* **Application**: In my project, each component, such as controllers, routes, and models, adheres to SRP. For example:
+  - Controllers are responsible for handling HTTP requests and responses.
+  - Models define the structure of our MongoDB documents.
+  - Routes to handle the functionality that needs to be invoked by the Controller
+2. #### Open/Closed Principle (OCP)
+* **Description**: Software entities (classes, modules, functions) should be open for extension but closed for modification.
+* **Application**: I designed our API routes and controllers to be extensible without altering existing code. New features can be added by creating new controllers and endpoints without modifying existing ones.
+3. #### Liskov Substitution Principle (LSP)
+* **Description**: Subtypes must be substitutable for their base types without altering the correctness of the program.
+* **Application**: My API controllers follow LSP, allowing derived controllers to replace base controllers without causing issues. For example, new versions of a controller can extend and override methods as needed while maintaining compatibility.
+4. #### Interface Segregation Principle (ISP)
+* **Description**: Clients should not be forced to depend on interfaces they do not use.
+* **Application**: We design our service interfaces and API endpoints to expose only the necessary functionality. Clients can depend on specific interfaces or endpoints without unnecessary dependencies.
+5. #### Dependency Inversion Principle (DIP)
+* **Description**: High-level modules should not depend on low-level modules. Both should depend on abstractions.
+* **Application**: We use dependency injection to decouple high-level components (e.g., controllers) from low-level components (functions). High-level components depend on abstractions (interfaces), allowing for flexibility and easier testing.
