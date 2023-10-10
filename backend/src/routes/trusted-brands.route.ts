@@ -7,6 +7,5 @@ const router = express.Router();
 
 // your routes paths and methods
 router.get("/api/getbrands", trustedBrandsControllers.getTrustedBrands);
-router.get("/api/syncbrands", trustedBrandsControllers.syncBrands);
 
 export default router;
